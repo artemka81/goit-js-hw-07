@@ -11,11 +11,18 @@ console.log(`В списке ${navLinksEl.length} категории`);
 // Категория: Животные
 // Количество элементов: 4
 
-for (let i = 0; i < navLinksEl.length; i++) {
-  const titleEl = navLinksEl[i].firstElementChild;
-  const itemsAnimallEl = titleEl.nextElementSibling.children.length;
+// for (let i = 0; i < navLinksEl.length; i++) {
+//   const titleEl = navLinksEl[i].firstElementChild;
+//   const itemsAnimallEl = titleEl.nextElementSibling.children.length;
+//   console.log(`
+// 		Категория: ${titleEl.innerText}
+// 		Количество элементов: ${itemsAnimallEl}
+// 	`);
+// }
+
+navLinksEl.forEach(caregory => {
   console.log(`
-		Категория: ${titleEl.innerText}
-		Количество элементов: ${itemsAnimallEl}
+		Категория: ${caregory.firstElementChild.textContent}
+		Количество элементов: ${caregory.firstElementChild.nextElementSibling.children.length}
 	`);
-}
+});

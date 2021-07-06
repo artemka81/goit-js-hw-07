@@ -10,12 +10,19 @@ const ingredients = [
 
 const navEl = document.getElementById('ingredients');
 
-const arr = [];
-ingredients.forEach( value => {
+// const arr = [];
+// ingredients.forEach(value => {
+//   const linkEl = document.createElement('li');
+//   linkEl.textContent = value;
+//   arr.push(linkEl.outerHTML);
+// });
+// const stringLinks = arr.join('');
+// navEl.insertAdjacentHTML('afterbegin', stringLinks);
+
+ingredients.map(value => {
+  const newArr = [];
   const linkEl = document.createElement('li');
   linkEl.textContent = value;
-  arr.push(linkEl.outerHTML);
+  newArr.push(linkEl);
+  navEl.append(...newArr);
 });
-const stringLinks = arr.join('');
-navEl.insertAdjacentHTML('afterbegin', stringLinks);
-
